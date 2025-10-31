@@ -1,0 +1,4 @@
+[
+  { "id":"benachin-beef", "name":"Benachin (Jolof Rice) with beef", "price":199, "desc":"One-pot rice, tomato base" },
+  { "id":"yassa-chicken", "name":"Yassa Chicken", "price":200, "desc":"Lemon-onion, rice" }
+]

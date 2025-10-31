@@ -1,0 +1,42 @@
+{
+  "brand": {
+    "name": "Foutiyou",
+    "tagline": "Coastal Senegambian Kitchen",
+    "logoText": "Foutiyou",
+    "primaryColor": "#1E2A44",
+    "accentColor": "#D9C7A1",
+    "heroImage": "/hero.jpg",
+    "isHalalFriendly": true,
+    "pickupOnly": true
+  },
+  "contact": {
+    "phone": "+47 400 00 000",
+    "email": "hello@foutiyou.com",
+    "address": "Storgata 1, Oslo",
+    "googleMapEmbed": "https://maps.google.com/..."
+  },
+  "hours": [
+    { "days": "Tue–Thu", "open": "12:00", "close": "21:00" },
+    { "days": "Fri–Sat", "open": "12:00", "close": "22:00" },
+    { "days": "Sun", "open": "13:00", "close": "20:00" }
+  ],
+  "features": {
+    "cart": true,
+    "checkout": true,
+    "reservations": true,
+    "kitchenScreen": true
+  },
+  "payments": {
+    "stripe": true,
+    "vipps": true,
+    "currency": "nok"
+  },
+  "menuSource": "/data/menu.json",
+  "nav": [
+    { "label": "Home", "to": "/" },
+    { "label": "Menu", "to": "/menu" },
+    { "label": "Reserve", "to": "/reserve" },
+    { "label": "About", "to": "/about" },
+    { "label": "Contact", "to": "/contact" }
+  ]
+}
