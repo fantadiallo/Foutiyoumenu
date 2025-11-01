@@ -1,0 +1,25 @@
+.page {
+  min-height: 100dvh;      /* full viewport height, mobile-safe */
+  display: flex;
+  flex-direction: column;
+  background: #0f1115;     /* match your theme */
+  color: #fff;
+}
+
+.main {
+  flex: 1;                 /* pushes footer to the bottom */
+  padding: 2rem 1rem;
+  width: min(100% - 32px, 1200px);
+  margin: 0 auto;
+}
+
+/* optional route fade-in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.main { animation: fadeIn .25s ease both; }
+
+@media (max-width: 768px) {
+  .main { padding: 1.5rem 1rem; }
+}
