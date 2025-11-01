@@ -1,0 +1,30 @@
+{
+  "mainDishes": [
+    { "id": "benachin-beef", "name": "Benachin (Jolof Rice) with beef", "price": 199 },
+    { "id": "plasas", "name": "Plasas (Baby spinach leaves, beef bites)", "price": 250 },
+    { "id": "supa-kanja", "name": "Supa Kanja (Okra soup, beef bites, fish, palm oil)", "price": 250 },
+    { "id": "domoda", "name": "Domoda with beef", "price": 180 },
+    { "id": "yassa-chicken", "name": "Yassa Chicken", "price": 200 },
+    { "id": "yassa-shrimp", "name": "Yassa Shrimp", "price": 250 },
+    { "id": "grills-best", "name": "Grills – The Best of the Best", "price": 500 },
+    { "id": "grill-wings", "name": "Grill wings with rice & onion sauce", "price": 195 },
+    { "id": "grill-shrimps", "name": "Grill Shrimps", "price": 350 },
+    { "id": "grill-dorado", "name": "Grill Dorado", "price": 350 },
+    { "id": "affra-dibbi", "name": "Affra (Dibbi)", "price": 299 },
+    { "id": "mix-grill", "name": "Mix Grill Plate", "price": 350 }
+  ],
+  "shareMenu": [
+    { "id": "grill-seafood", "name": "Grill Seafood Plate (Nice and Big)", "price": 799 },
+    { "id": "lamb-shoulder", "name": "The Senegambia Special Lamb Shoulder (4–6 people)", "price": 500, "unit": "per person" },
+    { "id": "whole-lamb", "name": "Whole Grilled Lamb (15–20 people, order in advance)", "priceRange": "7000–12000" }
+  ],
+  "extras": [
+    { "id": "coconut-rice", "name": "Coconut Rice", "price": 70 },
+    { "id": "mixed-salad", "name": "Mixed Salad", "price": 70 },
+    { "id": "onion-sauce", "name": "Onion Sauce (Caramelised, Yassa marinated)", "price": 70 },
+    { "id": "grill-wings-5", "name": "Grill Wings (5)", "price": 100 },
+    { "id": "grill-shrimps-4", "name": "Grill Shrimps (4)", "price": 160 },
+    { "id": "affra-4", "name": "Affra (Dibbi) (4)", "price": 150 },
+    { "id": "grill-plantain", "name": "Grill Plantain", "price": 100 }
+  ]
+}

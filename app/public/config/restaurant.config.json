@@ -15,10 +15,10 @@
     "address": "Storgata 1, Oslo",
     "googleMapEmbed": "https://maps.google.com/..."
   },
-  "hours": [
-    { "days": "Tue–Thu", "open": "12:00", "close": "21:00" },
-    { "days": "Fri–Sat", "open": "12:00", "close": "22:00" },
-    { "days": "Sun", "open": "13:00", "close": "20:00" }
+   "hours": [
+    { "days": "Mon–Fri", "windows": [["10:00","13:30"], ["16:00","22:30"]] },
+    { "days": "Sat",     "windows": [["16:30","22:30"]] },
+    { "days": "Sun",     "windows": [["14:00","21:00"]] }
   ],
   "features": {
     "cart": true,

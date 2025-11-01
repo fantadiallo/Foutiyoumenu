@@ -1,0 +1,30 @@
+.title {
+  text-align: center;
+  margin: 24px 0 6px;
+  color: var(--ivory);
+}
+
+.section {
+  margin: 26px 0;
+}
+
+.section h3 {
+  text-align: center;
+  margin: 0 0 14px;
+  background: linear-gradient(90deg, var(--green), var(--gold), var(--red), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.note {
+  text-align: center;
+  color: var(--ash);
+  margin: 20px 0 40px;
+}

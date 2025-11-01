@@ -1,0 +1,58 @@
+.card {
+  background: var(--stone);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, border-color 0.12s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.name {
+  font-weight: 700;
+}
+
+.price {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.meta {
+  margin-top: 6px;
+  color: var(--ash);
+  font-size: 0.95rem;
+}
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.add {
+  background: linear-gradient(180deg, var(--green), #067b34);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.12s ease;
+}
+
+.add:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
