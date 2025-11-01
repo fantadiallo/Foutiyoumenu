@@ -1,0 +1,228 @@
+.wrap {
+  padding: 24px 0 40px;
+  color: #fff;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+  margin: 6px 0 18px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+}
+
+.list {
+  display: grid;
+  gap: 12px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1.2fr auto auto auto;
+  align-items: center;
+  gap: 12px;
+  background: #16181f;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.info {
+  display: grid;
+  gap: 4px;
+}
+.name {
+  font-weight: 700;
+}
+.price {
+  color: #f3bf3a;
+  font-weight: 700;
+}
+
+.controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.qtyBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  cursor: pointer;
+  font-size: 18px;
+}
+.qtyInput {
+  width: 64px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0f1115;
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.lineTotal {
+  font-weight: 800;
+}
+
+.remove {
+  color: #ee7a2b;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  justify-self: end;
+}
+
+.sidebar {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.block {
+  background: #16181f;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 14px;
+  padding: 14px;
+}
+.block h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  color: #f3bf3a;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.pickup {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+.select {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0f1115;
+  color: #fff;
+  padding: 0 10px;
+}
+.time {
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0f1115;
+  color: #fff;
+  padding: 0 10px;
+}
+
+.textarea {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0f1115;
+  color: #fff;
+  padding: 10px;
+  resize: vertical;
+}
+
+.sumRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: #d3d6dc;
+}
+.sumRowTotal {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 14px;
+  font-weight: 900;
+  border-top: 1px dashed rgba(255,255,255,.12);
+  margin-top: 8px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: #ee7a2b;
+  color: #0f1115;
+  font-weight: 900;
+  border: 1px solid rgba(255,255,255,.08);
+  text-decoration: none;
+  text-align: center;
+}
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.2);
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}
+.btnLight {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 12px;
+  background: #fff;
+  color: #0f1115;
+  font-weight: 900;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.empty {
+  background: #16181f;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 24px;
+  display: grid;
+  gap: 12px;
+  place-items: center;
+}
+.empty p { margin: 0; font-size: 1.05rem; color: #d3d6dc; }
+
+@media (max-width: 960px) {
+  .grid { grid-template-columns: 1fr; }
+  .sidebar { order: -1; }
+}
+
+@media (max-width: 680px) {
+  .row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "info remove"
+      "controls controls"
+      "line line";
+  }
+  .info { grid-area: info; }
+  .remove { grid-area: remove; justify-self: end; }
+  .controls { grid-area: controls; }
+  .lineTotal { grid-area: line; justify-self: end; }
+  .actions { grid-template-columns: 1fr; }
+  .pickup { grid-template-columns: 1fr; }
+}
