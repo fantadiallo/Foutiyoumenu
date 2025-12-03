@@ -5,6 +5,10 @@
   --accent-2: #f3bf3a;
   --ring: #ffd78a;
   --elev: 0 6px 16px rgba(0, 0, 0, 0.12);
+
+  --topbar-h: 36px;
+  --headbar-h: 72px;
+  --header-total: calc(var(--topbar-h) + var(--headbar-h));
 }
 
 .wrap {
@@ -14,13 +18,13 @@
   background: var(--hdr-bg);
   color: var(--hdr-text);
   box-shadow: var(--elev);
+  isolation: isolate;
 }
 
 .skip {
   position: absolute;
   left: -9999px;
 }
-
 .skip:focus {
   left: 12px;
   top: 8px;
@@ -31,12 +35,13 @@
   z-index: 200;
 }
 
+/* ---------- Top bar ---------- */
 .top {
   display: grid;
   grid-template-columns: 1fr auto auto;
   align-items: center;
   gap: 12px;
-  height: 36px;
+  height: var(--topbar-h);
   font-size: 12px;
   opacity: 0.9;
 }
@@ -68,14 +73,14 @@
 .addr {
   color: #cfd3da;
 }
-
 .tel {
   color: var(--accent-2);
   font-weight: 700;
 }
 
+/* ---------- Head bar ---------- */
 .inner {
-  height: 72px;
+  height: var(--headbar-h);
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
@@ -90,6 +95,7 @@
   text-transform: uppercase;
 }
 
+/* ---------- Primary nav (desktop) ---------- */
 .menuBtn {
   display: none;
 }
@@ -135,6 +141,7 @@
   transform: scaleX(1);
 }
 
+/* ---------- CTAs ---------- */
 .ctaRow {
   display: flex;
   gap: 10px;
@@ -151,27 +158,26 @@
   border-radius: 12px;
   font-weight: 800;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
 }
 
 .primary {
   background: var(--accent);
   color: #0f1115;
 }
-
 .ghost {
   background: transparent;
   color: var(--hdr-text);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
-
 .primary:hover {
   filter: brightness(1.05);
 }
-
 .ghost:hover {
   background: rgba(255, 255, 255, 0.06);
 }
 
+/* --- Cart --- */
 .cart {
   position: relative;
   background: #fff;
@@ -198,6 +204,56 @@
   border: 2px solid var(--hdr-bg);
 }
 
+/* Small dot for bottom bar cart */
+.bDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  box-shadow: 0 0 0 2px rgba(0,0,0,.2) inset;
+}
+
+/* ---------- Staff menu (desktop) ---------- */
+.staffWrap { position: relative; }
+.staffBtn {
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--accent);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.staffBtn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+.staffMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  min-width: 140px;
+  background: #0b0c10;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+  padding: 8px;
+  display: grid;
+  gap: 6px;
+  z-index: 200;
+}
+.staffMenu a {
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 700;
+}
+.staffMenu a:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* ---------- Bottom bar (mobile quick nav) ---------- */
 .bottomBar {
   display: none;
 }
@@ -208,17 +264,17 @@
 .nav a:focus-visible,
 .btn:focus-visible,
 .tel:focus-visible,
-.addr:focus-visible {
+.addr:focus-visible,
+.staffBtn:focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
 }
 
-/* Responsive Adjustments */
+/* ---------- Responsive ---------- */
 @media (max-width: 920px) {
   .top {
     grid-template-columns: 1fr auto;
   }
-
   .addr {
     display: none;
   }
@@ -229,6 +285,7 @@
     grid-template-columns: auto 1fr auto;
   }
 
+  /* --- Hamburger --- */
   .menuBtn {
     display: inline-flex;
     align-items: center;
@@ -240,6 +297,7 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--accent);
     cursor: pointer;
+    z-index: 130;
   }
 
   .menuIcon,
@@ -251,59 +309,62 @@
     height: 2px;
     background: currentColor;
     position: relative;
+    transition: all 0.2s ease;
   }
 
-  .menuIcon::before {
-    position: absolute;
-    top: -6px;
+  .menuIcon::before { position: absolute; top: -6px; }
+  .menuIcon::after { position: absolute; top: 6px; }
+
+  .menuOpen .menuIcon { background: transparent; }
+  .menuOpen .menuIcon::before { transform: translateY(6px) rotate(45deg); }
+  .menuOpen .menuIcon::after { transform: translateY(-6px) rotate(-45deg); }
+
+  /* --- Backdrop ---
+     The backdrop is only rendered when the menu is open,
+     so we keep it visible by default. */
+  .backdrop {
+    position: fixed;
+    inset: var(--header-total) 0 0 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 110;
   }
 
-  .menuIcon::after {
-    position: absolute;
-    top: 6px;
-  }
-
-  .menuOpen .menuIcon {
-    background: transparent;
-  }
-
-  .menuOpen .menuIcon::before {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .menuOpen .menuIcon::after {
-    transform: translateY(-6px) rotate(-45deg);
-  }
-
+  /* --- Mobile Nav Sheet --- */
   .nav {
     position: fixed;
-    inset: 108px 0 auto 0;
+    top: var(--header-total);
+    left: 0;
+    right: 0;
+    z-index: 120;
     background: #0b0c10;
     display: grid;
     gap: 10px;
-    padding: 14px 16px;
+    padding: 18px 16px 24px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    transform: translateY(-12px);
+    max-height: calc(100dvh - var(--header-total));
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
   }
 
   .showNav {
-    transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+    transform: translateY(0);
   }
 
   .nav a {
-    padding: 10px 12px;
+    padding: 12px;
     background: rgba(255, 255, 255, 0.04);
     border-radius: 10px;
   }
 
-  .ctaRow {
-    display: none;
-  }
+  /* Hide desktop CTA row */
+  .ctaRow { display: none; }
 
+  /* Bottom bar */
   .bottomBar {
     position: sticky;
     bottom: 0;
@@ -320,6 +381,21 @@
     padding: 12px 8px;
     color: var(--accent);
     font-weight: 700;
+  }
+
+  /* Staff links inside the mobile menu */
+  .staffMobile {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    display: grid;
+    gap: 6px;
+  }
+  .staffLabel {
+    font-size: 12px;
+    opacity: .7;
+    text-transform: uppercase;
+    letter-spacing: .04em;
   }
 }
 
