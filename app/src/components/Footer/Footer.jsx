@@ -65,6 +65,7 @@ export default function Footer() {
 
       <div className={styles.bottom}>
         <p>© {year} {brand?.name || "Foutiyou"}. All rights reserved.</p>
+        
       </div>
     </footer>
   );
