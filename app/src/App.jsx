@@ -12,6 +12,10 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import KitchenPage from "./pages/KitchenPage/KitchenPage";
 import KitchenGate from "./pages/KitchenPage/KitchenGate";
 
+import OrderEditorPage from "./pages/Admin/OrderEditorPage/OrderEditorPage";
+import ReserveAdminPage from "./pages/Admin/ReserveAdminPage/ReserveAdminPage";
+import AdminLogin from "./pages/Admin/AdminLogin/AdminLogin";
+
 export default function App() {
   return (
     <CartProvider>
@@ -35,6 +39,10 @@ export default function App() {
             </KitchenGate>
           }
         />
+
+        <Route path="/admin" element={<AdminLogin />} />
+        <Route path="/admin/reservations" element={<ReserveAdminPage />} />
+        <Route path="/admin/orders/:id" element={<OrderEditorPage />} />
       </Routes>
     </CartProvider>
   );
