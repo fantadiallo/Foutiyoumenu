@@ -1,0 +1,123 @@
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+
+  h2 {
+    margin: 0;
+    font-size: clamp(18px, 2.6vw, 24px);
+    font-weight: 700;
+  }
+}
+
+.input {
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.section {
+  margin-top: 16px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.count {
+  display: inline-block;
+  font-size: 12px;
+  background: #eef2ff;
+  color: #1e2a44;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.empty {
+  opacity: 0.7;
+  padding: 10px;
+  border: 1px dashed #ddd;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.row {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.rowInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #1e2a44;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.timer {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #1565c0;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.btnGhost {
+  background: transparent;
+  color: #111;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
