@@ -1,0 +1,150 @@
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.title {
+  margin: 0 0 4px;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.field {}
+
+.label {
+  display: block;
+  font-size: 12px;
+  margin: 0 0 6px;
+  opacity: 0.8;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.sectionTitle {
+  margin: 22px 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.tileBtn {
+  text-align: left;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  background: #fff;
+  padding: 12px;
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .15s ease;
+
+  &:hover { box-shadow: 0 6px 16px rgba(0,0,0,.06); }
+  &:active { transform: translateY(1px); }
+}
+
+.tileCode { font-weight: 700; }
+.tileMeta { font-size: 12px; opacity: .8; }
+.tileHint { font-size: 12px; margin-top: 6px; }
+
+.empty {
+  opacity: 0.7;
+  padding: 10px;
+  border: 1px dashed #ddd;
+  border-radius: 10px;
+}
+
+.holds {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.holdCard {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  background: #fff;
+}
+
+.holdInfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.badge {
+  display: inline-block;
+  background: #1e2a44;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+
+.expiry { font-size: 12px; opacity: .8; }
+
+.actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.editor { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+.inputSmall {
+  padding: 8px 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.btn {
+  background: #1565c0;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.btnGhost {
+  background: transparent;
+  color: #111;
+  border: 1px solid #bbb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.help {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #9a6b00;
+}
