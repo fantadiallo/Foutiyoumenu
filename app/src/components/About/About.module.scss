@@ -1,0 +1,59 @@
+.AboutSection {
+  padding: 5rem 2rem;
+  background: var(--bg, #0b0908);
+}
+
+.SplitContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.SplitLeft {
+  flex: 1 1 400px;
+
+  h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+  }
+}
+
+.SplitRight {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .slideImage {
+    animation: fadeSlide 1s ease-in-out;
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

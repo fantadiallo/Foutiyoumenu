@@ -1,0 +1,181 @@
+:root {
+  --border-light: rgba(255, 255, 255, 0.08);
+  --panel-bg: #0f1115;
+  --panel-inner: #14171d;
+  --panel-border: rgba(255, 255, 255, 0.12);
+}
+
+/* ---- WRAP ---- */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 16px;
+  color: #ffffff;
+}
+
+/* ---- HEADER ---- */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.input {
+  padding: 10px 12px;
+  background: #14171d;
+  color: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--accent);
+}
+
+/* ---- META ---- */
+.meta {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* ---- ACTIONS ---- */
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ---- SECTION ---- */
+.section {
+  margin-top: 20px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.sectionHead h3 {
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+}
+
+.count {
+  background: var(--accent-2);
+  color: #0f1115;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* ---- LIST ---- */
+.list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  background: #14171d;
+  border: 1px solid var(--panel-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.rowInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Badge for table code */
+.badge {
+  background: var(--accent);
+  color: #0f1115;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.timer {
+  font-size: 12px;
+  opacity: 0.65;
+}
+
+/* ---- EMPTY STATE ---- */
+.empty {
+  opacity: 0.6;
+  padding: 12px;
+  border-radius: 10px;
+  background: #14171d;
+  border: 1px dashed var(--panel-border);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ---- BUTTONS ---- */
+.btn {
+  background: var(--accent);
+  color: #0f1115;
+  font-weight: 800;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btnGhost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid var(--border-light);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btnGhost:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 8px;
+  }
+}
+
+@media (max-width: 500px) {
+  .head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input {
+    width: 100%;
+  }
+}
+

@@ -4,8 +4,7 @@ const stripe = new Stripe(Deno.env.get('STRIPE_SECRET_KEY')!, { apiVersion: '202
 
 serve(async (req) => {
   const body = await req.json();
-  // body: { orderId, lineItems:[{name,amount,quantity}], currency }
-  const session = await stripe.checkout.sessions.create({
+ const session = await stripe.checkout.sessions.create({
     mode: 'payment',
     success_url: `${Deno.env.get('PUBLIC_SITE_URL')}/checkout/success?order=${body.orderId}`,
     cancel_url: `${Deno.env.get('PUBLIC_SITE_URL')}/checkout`,

@@ -1,13 +1,24 @@
+import styles from "./DishCard.module.scss";
+
 export default function DishCard({ dish }) {
   if (!dish) return null;
+
+  const fallback = "https://placehold.co/400x300?text=Foutiyou";
+
   return (
-    <div className="dish-card">
-      <div style={{display:"flex", justifyContent:"space-between", gap:12}}>
-        <h3 style={{margin:0}}>{dish.name}</h3>
-        <strong>{dish.price} kr</strong>
+    
+    <div className={styles.card}>
+      <div className={styles.imgWrap}>
+        <img src={dish.img || fallback} alt={dish.name} />
       </div>
-      {dish.desc ? <p style={{opacity:.8, margin:"6px 0 0"}}>{dish.desc}</p> : null}
-      {/* hood and  add-to-cart later */}
+      <div className={styles.info}>
+        <h3>{dish.name}</h3>
+        {dish.desc && <p className={styles.desc}>{dish.desc}</p>}
+        <div className={styles.bottom}>
+          <span className={styles.price}>{dish.price} kr</span>
+          <button className={styles.btn}>Order</button>
+        </div>
+      </div>
     </div>
   );
 }
